@@ -1,4 +1,13 @@
+# zgle: 
 
+. activate py373
+conda install -c conda-forge opencv=3.4.1
+
+# SIFT no longer available in opencv > 3.4.2
+https://stackoverflow.com/questions/52669705/attributeerror-module-cv2-cv2-has-no-attribute-xfeatures2d-opencv-3-4-3/52685991
+    - pip install opencv-contrib-python-headless==3.4.1 --user
+
+---
 
 > 教程地址：[codec.wang](http://codec.wang)
 

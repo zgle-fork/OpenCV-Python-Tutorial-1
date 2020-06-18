@@ -4,7 +4,8 @@
 import cv2
 
 # 1.打开摄像头
-capture = cv2.VideoCapture(2)
+# capture = cv2.VideoCapture(2)
+capture = cv2.VideoCapture(0)
 
 # 2.获取捕获的分辨率
 width, height = capture.get(3), capture.get(4)
@@ -17,6 +18,7 @@ capture.set(cv2.CAP_PROP_FRAME_HEIGHT, height * 2)
 while(True):
     # 获取一帧
     ret, frame = capture.read()
+    # print('frame:', frame)
     # 将这帧转换为灰度图
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 

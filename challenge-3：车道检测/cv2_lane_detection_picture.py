@@ -4,7 +4,6 @@
 
 import cv2
 import numpy as np
-from moviepy.editor import VideoFileClip
 
 # 高斯滤波核大小
 blur_ksize = 5
@@ -75,6 +74,7 @@ def draw_lines(img, lines, color=[0, 0, 255], thickness=1):
 
 
 def draw_lanes(img, lines, color=[255, 0, 0], thickness=8):
+    print('lines',lines)
     # a. 划分左右车道
     left_lines, right_lines = [], []
     for line in lines:
@@ -147,7 +147,9 @@ def least_squares_fit(point_list, ymin, ymax):
 
 
 if __name__ == "__main__":
-    output = 'test_videos/cv2_yellow_lane_green_mark.mp4'
-    clip = VideoFileClip("test_videos/cv2_yellow_lane.mp4")
-    out_clip = clip.fl_image(process_an_image)
-    out_clip.write_videofile(output, audio=False)
+    # img = cv2.imread('test_pictures/lane.jpg')
+    img = cv2.imread('test_pictures/lane2.jpg')
+    print(img)
+    result = process_an_image(img)
+    cv2.imshow("lane", np.hstack((img, result)))
+    cv2.waitKey(0)

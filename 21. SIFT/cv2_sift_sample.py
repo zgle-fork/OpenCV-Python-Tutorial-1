@@ -1,6 +1,12 @@
 # ex2tron's blog:
 # http://ex2tron.wang
 
+'''
+zgle: SIFT no longer available in opencv > 3.4.2
+https://github.com/DynaSlum/satsense/issues/13
+    - pip install opencv-contrib-python-headless==3.4.2.17 --user
+'''
+
 import cv2
 import numpy as np
 

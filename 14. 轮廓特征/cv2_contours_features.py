@@ -7,7 +7,9 @@ import numpy as np
 # 载入手写数字图片
 img = cv2.imread('handwriting.jpg', 0)
 _, thresh = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
-image, contours, hierarchy = cv2.findContours(thresh, 3, 2)
+# image, contours, hierarchy = cv2.findContours(thresh, 3, 2)
+contours, hierarchy = cv2.findContours(thresh, 3, 2)
+image=img
 
 # 创建出两幅彩色图用于绘制
 img_color1 = cv2.cvtColor(image, cv2.COLOR_GRAY2BGR)
@@ -65,7 +67,8 @@ cv2.waitKey(0)
 # 7.形状匹配
 img = cv2.imread('shapes.jpg', 0)
 _, thresh = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-image, contours, hierarchy = cv2.findContours(thresh, 3, 2)
+# image, contours, hierarchy = cv2.findContours(thresh, 3, 2)
+contours, hierarchy = cv2.findContours(thresh, 3, 2)
 img_color = cv2.cvtColor(image, cv2.COLOR_GRAY2BGR)
 
 cnt_a, cnt_b, cnt_c = contours[0], contours[1], contours[2]
