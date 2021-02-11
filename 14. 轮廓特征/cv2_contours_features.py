@@ -8,7 +8,7 @@ import numpy as np
 img = cv2.imread('handwriting.jpg', 0)
 _, thresh = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
 # image, contours, hierarchy = cv2.findContours(thresh, 3, 2)
-contours, hierarchy = cv2.findContours(thresh, 3, 2)
+_,contours, hierarchy = cv2.findContours(thresh, 3, 2)
 image=img
 
 # 创建出两幅彩色图用于绘制
